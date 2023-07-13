@@ -40,6 +40,29 @@
             </select>
         </div>
 
+        {{-- technology --}}
+        {{-- <div class="mb-3">
+
+            <label for="type_id">Technologies</label>
+            <select class="form-control" name="type_id" id="type_id">
+                <option value="" selected disabled>Seleziona la categoria</option>
+                @foreach ($technologies as $technology)
+                    <option value="{{$technology->id}}">{{$technology->name}}</option>
+                @endforeach
+                
+            </select>
+        </div> --}}
+
+        @foreach ($technologies as $technology)
+        <div class="form-check">
+                
+            <input class="form-check-input" type="checkbox" value="{{$technology->id}}" id="name">
+            <label class="form-check-label" for="flexCheckDefault">
+                {{$technology->name}}
+            </label>
+        </div>
+        @endforeach
+
         {{-- immagine --}}
         <div class="mb-3">
             <label for="image" class="form-label">Inserisci URL Img</label>

@@ -24,6 +24,8 @@ class TechnologySeeder extends Seeder
             $newTechnology->name = $technology;
             $newTechnology->save();
         }
+
+        
         // $technologies = config("store.tecnologies");
 
         // for ($i=0; $i < count($technologies); $i++) { 
