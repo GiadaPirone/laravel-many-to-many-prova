@@ -12,6 +12,7 @@
                 <p>{{$project->description}}</p>
                 <p>Categoria: {{$project->type ? $project->type->name : "non selezionata!"}}</p>
                 <p>Technology: </p>
+                
                 <ul>
                     @foreach ($project->technologies as $technology)
                     <li>{{$technology->name}}</li>
