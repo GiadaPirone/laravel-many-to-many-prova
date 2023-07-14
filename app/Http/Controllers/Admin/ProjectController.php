@@ -41,12 +41,16 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreProjectRequest $request)
-    {
+    {   
+        // dump($request->all());
         $data = $request->validated();
-
+        
         $newProject = new Project();
-        $newProject->fill($data);
+        $newProject->fill($data);        
         $newProject->save();
+        
+        $newProject->technologies()->attach($data["technologies"]);
+
 
         return to_route("admin.projects.show", $newProject->id);
 

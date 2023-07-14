@@ -11,6 +11,12 @@
                 <h5 class="card-title">{{ $project->title }}</h5>
                 <p>{{$project->description}}</p>
                 <p>Categoria: {{$project->type ? $project->type->name : "non selezionata!"}}</p>
+                <p>Technology: </p>
+                <ul>
+                    @foreach ($project->technologies as $technology)
+                    <li>{{$technology->name}}</li>
+                    @endforeach
+                </ul>
 
                 <button type="button" class="btn btn-light">
                     <a href="{{route("admin.projects.index")}}">Lista Projects</a>                       

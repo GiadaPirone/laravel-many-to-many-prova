@@ -53,11 +53,11 @@
             </select>
         </div> --}}
 
-        @foreach ($technologies as $technology)
+        @foreach ($technologies as  $i => $technology)
         <div class="form-check">
                 
-            <input class="form-check-input" type="checkbox" value="{{$technology->id}}" id="name">
-            <label class="form-check-label" for="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" value="{{$technology->id}}" id="technologies{{$i}}" name="technologies[]">
+            <label class="form-check-label" for="technologies{{$i}}">
                 {{$technology->name}}
             </label>
         </div>
